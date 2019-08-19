@@ -12,6 +12,8 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7076D339D33768510DC2FEAB /* libPods-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D07984E20B977FB69340669A /* libPods-Demo.a */; };
+		85C2DCD3230B3BDC00EFDAA5 /* RNCarnival.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C2DCD1230B3BDC00EFDAA5 /* RNCarnival.m */; };
+		85C2DCD4230B3BDC00EFDAA5 /* RNCarnivalBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 85C2DCD2230B3BDC00EFDAA5 /* RNCarnivalBridge.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,10 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Demo/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Demo/main.m; sourceTree = "<group>"; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		85C2DCCF230B3BDC00EFDAA5 /* RNCarnivalBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNCarnivalBridge.h; path = "../node_modules/react-native-carnival/ios/RNCarnivalBridge.h"; sourceTree = "<group>"; };
+		85C2DCD0230B3BDC00EFDAA5 /* RNCarnival.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNCarnival.h; path = "../node_modules/react-native-carnival/ios/RNCarnival.h"; sourceTree = "<group>"; };
+		85C2DCD1230B3BDC00EFDAA5 /* RNCarnival.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNCarnival.m; path = "../node_modules/react-native-carnival/ios/RNCarnival.m"; sourceTree = "<group>"; };
+		85C2DCD2230B3BDC00EFDAA5 /* RNCarnivalBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNCarnivalBridge.m; path = "../node_modules/react-native-carnival/ios/RNCarnivalBridge.m"; sourceTree = "<group>"; };
 		AA9E29CA6B117A937FF70203 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		C5124E8418C198EE12645FAE /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		D07984E20B977FB69340669A /* libPods-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +77,10 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				85C2DCD0230B3BDC00EFDAA5 /* RNCarnival.h */,
+				85C2DCD1230B3BDC00EFDAA5 /* RNCarnival.m */,
+				85C2DCCF230B3BDC00EFDAA5 /* RNCarnivalBridge.h */,
+				85C2DCD2230B3BDC00EFDAA5 /* RNCarnivalBridge.m */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -103,7 +113,6 @@
 				AA9E29CA6B117A937FF70203 /* Pods-Demo.debug.xcconfig */,
 				C5124E8418C198EE12645FAE /* Pods-Demo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -121,6 +130,7 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				F6587501C339D3D486B96D4E /* [CP] Copy Pods Resources */,
+				2287563DC1779E2097D39146 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -139,12 +149,6 @@
 			attributes = {
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = Facebook;
-				TargetAttributes = {
-					00E356ED1AD99517003FC87E = {
-						CreatedOnToolsVersion = 6.2;
-						TestTargetID = 13B07F861A680F5B00A75B9A;
-					};
-				};
 			};
 			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Demo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -191,6 +195,26 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
+		2287563DC1779E2097D39146 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Demo/Pods-Demo-frameworks.sh",
+				"${PODS_ROOT}/Carnival/Carnival.framework",
+				"${PODS_ROOT}/Carnival/CarnivalExtension.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Carnival.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CarnivalExtension.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Demo/Pods-Demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C853D6F6A683AC77489BBCC0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -224,6 +248,23 @@
 				"${PODS_ROOT}/Amplitude-iOS/Amplitude/ComodoCaLimitedRsaCertificationAuthority.der",
 				"${PODS_ROOT}/Amplitude-iOS/Amplitude/ComodoRsaCA.der",
 				"${PODS_ROOT}/Amplitude-iOS/Amplitude/ComodoRsaDomainValidationCA.der",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_close_button@2x.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_close_button_white@2x.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_message_close_button@2x.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_refresh.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari-7@2x~ipad.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari-7@2x~iphone.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari-7@3x~iphone.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari-7~ipad.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari-7~iphone.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari@2x~ipad.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari@2x~iphone.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari@3x~iphone.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari~ipad.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_safari~iphone.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_share_button_white@2x.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_stream_back_button@2x.png",
+				"${PODS_ROOT}/Carnival/Carnival.framework/cp_stream_back_button_white@2x.png",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -231,6 +272,23 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ComodoCaLimitedRsaCertificationAuthority.der",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ComodoRsaCA.der",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ComodoRsaDomainValidationCA.der",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_close_button@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_close_button_white@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_message_close_button@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_refresh.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari-7@2x~ipad.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari-7@2x~iphone.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari-7@3x~iphone.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari-7~ipad.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari-7~iphone.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari@2x~ipad.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari@2x~iphone.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari@3x~iphone.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari~ipad.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_safari~iphone.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_share_button_white@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_stream_back_button@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/cp_stream_back_button_white@2x.png",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -265,6 +323,8 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				85C2DCD4230B3BDC00EFDAA5 /* RNCarnivalBridge.m in Sources */,
+				85C2DCD3230B3BDC00EFDAA5 /* RNCarnival.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

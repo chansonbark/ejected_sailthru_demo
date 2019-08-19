@@ -14,6 +14,8 @@
 #import <UMReactNativeAdapter/UMNativeModulesProxy.h>
 #import <UMReactNativeAdapter/UMModuleRegistryAdapter.h>
 
+#import "RNCarnivalBridge.h"
+
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -21,8 +23,30 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   self.moduleRegistryAdapter = [[UMModuleRegistryAdapter alloc] initWithModuleRegistryProvider:[[UMModuleRegistryProvider alloc] init]];
-  RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
-  RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge moduleName:@"Demo" initialProperties:nil];
+
+  // Not present after ejecting from Expo, but needed for Sailthru code to not error:
+  NSURL *jsCodeLocation;
+
+  #ifdef DEBUG
+    jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
+  #else
+    jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
+  #endif
+
+  // Code from Sailthru setup docs:
+  id<RCTBridgeDelegate> moduleInitialiser = [[RNCarnivalBridge alloc] initWithJSCodeLocation:jsCodeLocation appKey:@"123456FakeKey"]; // Obtain SDK key from your Carnival app settings
+
+  // RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
+  RCTBridge * bridge = [[RCTBridge alloc] initWithDelegate:moduleInitialiser launchOptions:launchOptions];
+
+  RCTRootView * rootView = [[RCTRootView alloc]
+                            initWithBridge:bridge
+                            moduleName:@"Demo"
+                            initialProperties:nil];
+
+  // RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge moduleName:@"Demo" initialProperties:nil];
+  // End Sailthru code
+
   rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
 
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];

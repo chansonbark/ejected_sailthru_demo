@@ -29,5 +29,7 @@ target 'Demo' do
   pod 'RNGestureHandler', :podspec => '../node_modules/react-native-gesture-handler/RNGestureHandler.podspec'
   pod 'RNReanimated', :podspec => '../node_modules/react-native-reanimated/RNReanimated.podspec'
 
+  pod 'Carnival'
+
   use_unimodules!
 end

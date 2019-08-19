@@ -1,7 +1,0 @@
-dependencies: \
-  /Users/coreyhanson/ejected_sailthru_demo/ios/Pods/Amplitude-iOS/Amplitude/AMPDeviceInfo.m \
-  /Users/coreyhanson/ejected_sailthru_demo/ios/Pods/Target\ Support\ Files/Amplitude-iOS/Amplitude-iOS-prefix.pch \
-  /Users/coreyhanson/ejected_sailthru_demo/ios/Pods/Amplitude-iOS/Amplitude/AMPARCMacros.h \
-  /Users/coreyhanson/ejected_sailthru_demo/ios/Pods/Amplitude-iOS/Amplitude/AMPDeviceInfo.h \
-  /Users/coreyhanson/ejected_sailthru_demo/ios/Pods/Amplitude-iOS/Amplitude/AMPUtils.h \
-  /Users/coreyhanson/ejected_sailthru_demo/ios/Pods/Amplitude-iOS/Amplitude/AMPConstants.h
